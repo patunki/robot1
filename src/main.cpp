@@ -159,8 +159,7 @@ void SpotTurnLeft(float time){
   digitalWrite(ML1, LOW);
   digitalWrite(MR2, LOW);
   digitalWrite(ML2, LOW);  
-  delay(time*1000);
-
+  delay(time);
 }
 
 void SpotTurnRight(float time){
@@ -171,8 +170,7 @@ void SpotTurnRight(float time){
   digitalWrite(ML1, HIGH);
   digitalWrite(MR2, LOW);
   digitalWrite(ML2, LOW);  
-  delay(time*1000);
-
+  delay(time);
 }
 
 void Right(float time){
@@ -245,7 +243,7 @@ void Spin(int dir){
 }
 
 void Piruetti(){
-  switch (random(1,2))
+  switch (random(1,3))
   {
     case 1: Sound(); Spin(1); break;
     case 2: Sound(); Spin(2); break;
@@ -307,9 +305,9 @@ void loop() {
   {
     stack = 0;
     bored = false;
-    switch (random(1,2))
+    switch (random(1,3))
     {
-    case 1: SpotTurnLeft(0.1); PlaySongGOT(); break;
+    case 1: SpotTurnLeft(2); PlaySongGOT(); break;
     case 2: Stop(); PlaySongPotter(); break;
     }
   }
@@ -318,15 +316,15 @@ void loop() {
   MeasureDistance();
   if (distance < 10)
   {
-    Backward(1.5);
+    Backward(1.3);
   }
   
   if (distance < 30)
   {
     Stop();
     Sound();
-    float time = random(0.5,2);
-    switch (random(1,2))
+    long time = random(600,1200);
+    switch (random(1,3))
       {
       case 1: SpotTurnLeft(time); break;
       case 2: SpotTurnRight(time); break;
@@ -334,7 +332,7 @@ void loop() {
       }
   } else if (distance > 170 && stack > 80)
   {
-    switch (random(1,4))
+    switch (random(1,5))
     {
       case 1: Piruetti(); break;
       case 2: Swiggle(); break;
