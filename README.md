@@ -1,6 +1,6 @@
 ## A simple robot
 
-A simple "autonomous" robot that uses the HC-SR04 to navigate and plays some music. Made in a big hurry so it has a few flaws. For example random() doesn't seem to work often just assumes that distance is 0.
+A simple "autonomous" robot that uses the HC-SR04 to navigate and plays some music. Made in a big hurry so it has a few flaws. For example random() doesn't seem to work and often just assumes that distance is 0.
 
 ## Components
 
